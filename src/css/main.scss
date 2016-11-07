@@ -1,0 +1,58 @@
+// @import 'skeleton'; 
+.view {
+    transition: all .5s ease;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+/*.v-link-active {
+    color: red;
+}
+[v-cloak] {
+    display: none;
+}*/
+
+/*html,body,.wrap{
+	width: 100%;
+	height: 100%;
+}
+*/
+.wrap{
+	overflow: hidden;
+	min-height: 100vh;	
+}
+html.mobile{
+	.content_wrap {		
+		-webkit-overflow-scrolling: touch;
+		overflow-y: scroll;		
+	}
+}
+html.desktop{
+	.content_wrap {
+		transform-origin: left center;
+		transition: transform 0.5s;
+		&.on{
+			transform: perspective(1000px) rotateY(20deg)			
+		}
+	}
+}
+
+h1{
+	color:red;
+}
+
+.button.on{
+	background: #2ecc71;
+}
+.content_wrap {
+	width: 100%;
+	height: 100%;	
+	// z-index: 1;
+	/*iframe{
+		width: 100%;
+		height: 100%;
+	}*/
+}

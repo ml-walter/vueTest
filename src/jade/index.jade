@@ -1,0 +1,31 @@
+doctype
+html
+    head
+        - var devMode = process.env.NODE_ENV  == 'development'
+        - function date_now_format() { var date = new Date(); return date.getFullYear() + "_" + ( date.getMonth() + 1 ) + "_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds();     }
+        - var time = date_now_format();
+        meta(charset='UTF-8')
+        title Vue2.0
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no")
+        meta(property="og:title" content="我是網站的Title")
+        meta(property="og:description" content="我是網站的Description")
+        meta(property="og:image" content="img/1200x630.png")
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css')        
+    body
+        #app.wrap
+            app
+
+        if devMode
+            script(src='//cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.auto.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.0/vue-router.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vuex/2.0.0/vuex.js')
+        - else            
+            script(src='//cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.auto.min.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.min.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.0/vue-router.min.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vuex/2.0.0/vuex.min.js')
+        
+        script(src='//cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.min.js')
+        script(src='//connect.facebook.net/zh_TW/sdk.js')
+        script(src='asset/js/app.js?_v_=#{time}')        
